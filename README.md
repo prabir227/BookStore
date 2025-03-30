@@ -23,7 +23,7 @@ This is a Spring Boot-based backend application for managing a bookstore. It pro
 
 1. **Clone the Repository:**
 ```bash
-https://github.com/your-repo-link.git
+hthttps://github.com/prabir227/BookStore.git
 ```
 
 Or download the ZIP file and extract it.
