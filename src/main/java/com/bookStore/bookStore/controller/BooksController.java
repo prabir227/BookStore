@@ -40,7 +40,7 @@ public class BooksController {
 
     }
     @DeleteMapping("/deleteBookById/{id}")
-    public ResponseEntity<?> deleteBookById(@RequestParam String id) {
+    public ResponseEntity<?> deleteBookById(@PathVariable String id) {
         try{
             Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
             String email = authentication.getName();
@@ -75,7 +75,7 @@ public class BooksController {
         }
     }
     @GetMapping("/filterByAuthor/{author}")
-    public ResponseEntity<?> filterByAuthor(@RequestParam String author){
+    public ResponseEntity<?> filterByAuthor(@PathVariable String author){
         try{
             Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
             Optional<BookEntity> books = bookService.filterBYAuthor(author);
@@ -85,7 +85,7 @@ public class BooksController {
         }
     }
     @GetMapping("/filterByCategory/{category}")
-    public ResponseEntity<?> filterByCategory(@RequestParam String category){
+    public ResponseEntity<?> filterByCategory(@PathVariable String category){
         try {
             Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
             Optional<BookEntity> books = bookService.filterBYCategory(category);
@@ -95,7 +95,7 @@ public class BooksController {
         }
     }
     @GetMapping("/filterByRating/{rating}")
-    public ResponseEntity<?> filterByCategory(@RequestParam Float rating){
+    public ResponseEntity<?> filterByCategory(@PathVariable Float rating){
         try {
             Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
             Optional<BookEntity> books = bookService.filterBYRating(rating);

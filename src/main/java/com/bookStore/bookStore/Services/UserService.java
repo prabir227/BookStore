@@ -34,4 +34,7 @@ public class UserService {
     public UserEntity findByEmail(String email) {
         return userRepository.findByEmail(email);
     }
+    public void updateUser(UserEntity user) {
+        userRepository.save(user);
+    }
 }
